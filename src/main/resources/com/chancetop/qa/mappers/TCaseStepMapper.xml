@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chancetop.qa.mappers.TCaseStepMapper">
+  <resultMap id="BaseResultMap" type="com.chancetop.qa.model.TCaseStep">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="t_project_id" jdbcType="BIGINT" property="tProjectId" />
+    <result column="t_case_id" jdbcType="BIGINT" property="tCaseId" />
+    <result column="action" jdbcType="VARCHAR" property="action" />
+    <result column="selector" jdbcType="VARCHAR" property="selector" />
+    <result column="element" jdbcType="VARCHAR" property="element" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, t_project_id, t_case_id, `action`, selector, `element`, `value`
+  </sql>
+  <select id="selectByExample" parameterType="com.chancetop.qa.examples.TCaseStepExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_case_step
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_case_step
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_case_step
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.chancetop.qa.examples.TCaseStepExample">
+    delete from t_case_step
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.chancetop.qa.model.TCaseStep">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_case_step (t_project_id, t_case_id, `action`, 
+      selector, `element`, `value`
+      )
+    values (#{tProjectId,jdbcType=BIGINT}, #{tCaseId,jdbcType=BIGINT}, #{action,jdbcType=VARCHAR}, 
+      #{selector,jdbcType=VARCHAR}, #{element,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chancetop.qa.model.TCaseStep">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_case_step
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tProjectId != null">
+        t_project_id,
+      </if>
+      <if test="tCaseId != null">
+        t_case_id,
+      </if>
+      <if test="action != null">
+        `action`,
+      </if>
+      <if test="selector != null">
+        selector,
+      </if>
+      <if test="element != null">
+        `element`,
+      </if>
+      <if test="value != null">
+        `value`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tProjectId != null">
+        #{tProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="tCaseId != null">
+        #{tCaseId,jdbcType=BIGINT},
+      </if>
+      <if test="action != null">
+        #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="selector != null">
+        #{selector,jdbcType=VARCHAR},
+      </if>
+      <if test="element != null">
+        #{element,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.chancetop.qa.examples.TCaseStepExample" resultType="java.lang.Long">
+    select count(*) from t_case_step
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_case_step
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.tProjectId != null">
+        t_project_id = #{record.tProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="record.tCaseId != null">
+        t_case_id = #{record.tCaseId,jdbcType=BIGINT},
+      </if>
+      <if test="record.action != null">
+        `action` = #{record.action,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selector != null">
+        selector = #{record.selector,jdbcType=VARCHAR},
+      </if>
+      <if test="record.element != null">
+        `element` = #{record.element,jdbcType=VARCHAR},
+      </if>
+      <if test="record.value != null">
+        `value` = #{record.value,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_case_step
+    set id = #{record.id,jdbcType=BIGINT},
+      t_project_id = #{record.tProjectId,jdbcType=BIGINT},
+      t_case_id = #{record.tCaseId,jdbcType=BIGINT},
+      `action` = #{record.action,jdbcType=VARCHAR},
+      selector = #{record.selector,jdbcType=VARCHAR},
+      `element` = #{record.element,jdbcType=VARCHAR},
+      `value` = #{record.value,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chancetop.qa.model.TCaseStep">
+    update t_case_step
+    <set>
+      <if test="tProjectId != null">
+        t_project_id = #{tProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="tCaseId != null">
+        t_case_id = #{tCaseId,jdbcType=BIGINT},
+      </if>
+      <if test="action != null">
+        `action` = #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="selector != null">
+        selector = #{selector,jdbcType=VARCHAR},
+      </if>
+      <if test="element != null">
+        `element` = #{element,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        `value` = #{value,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.chancetop.qa.model.TCaseStep">
+    update t_case_step
+    set t_project_id = #{tProjectId,jdbcType=BIGINT},
+      t_case_id = #{tCaseId,jdbcType=BIGINT},
+      `action` = #{action,jdbcType=VARCHAR},
+      selector = #{selector,jdbcType=VARCHAR},
+      `element` = #{element,jdbcType=VARCHAR},
+      `value` = #{value,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

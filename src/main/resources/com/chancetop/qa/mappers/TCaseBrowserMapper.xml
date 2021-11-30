@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chancetop.qa.mappers.TCaseBrowserMapper">
+  <resultMap id="BaseResultMap" type="com.chancetop.qa.model.TCaseBrowser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="t_project_id" jdbcType="BIGINT" property="tProjectId" />
+    <result column="t_browser_id" jdbcType="BIGINT" property="tBrowserId" />
+    <result column="t_case_id" jdbcType="BIGINT" property="tCaseId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, t_project_id, t_browser_id, t_case_id
+  </sql>
+  <select id="selectByExample" parameterType="com.chancetop.qa.examples.TCaseBrowserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_case_browser
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_case_browser
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_case_browser
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.chancetop.qa.examples.TCaseBrowserExample">
+    delete from t_case_browser
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.chancetop.qa.model.TCaseBrowser">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_case_browser (t_project_id, t_browser_id, t_case_id
+      )
+    values (#{tProjectId,jdbcType=BIGINT}, #{tBrowserId,jdbcType=BIGINT}, #{tCaseId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chancetop.qa.model.TCaseBrowser">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_case_browser
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tProjectId != null">
+        t_project_id,
+      </if>
+      <if test="tBrowserId != null">
+        t_browser_id,
+      </if>
+      <if test="tCaseId != null">
+        t_case_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tProjectId != null">
+        #{tProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="tBrowserId != null">
+        #{tBrowserId,jdbcType=BIGINT},
+      </if>
+      <if test="tCaseId != null">
+        #{tCaseId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.chancetop.qa.examples.TCaseBrowserExample" resultType="java.lang.Long">
+    select count(*) from t_case_browser
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_case_browser
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.tProjectId != null">
+        t_project_id = #{record.tProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="record.tBrowserId != null">
+        t_browser_id = #{record.tBrowserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.tCaseId != null">
+        t_case_id = #{record.tCaseId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_case_browser
+    set id = #{record.id,jdbcType=BIGINT},
+      t_project_id = #{record.tProjectId,jdbcType=BIGINT},
+      t_browser_id = #{record.tBrowserId,jdbcType=BIGINT},
+      t_case_id = #{record.tCaseId,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chancetop.qa.model.TCaseBrowser">
+    update t_case_browser
+    <set>
+      <if test="tProjectId != null">
+        t_project_id = #{tProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="tBrowserId != null">
+        t_browser_id = #{tBrowserId,jdbcType=BIGINT},
+      </if>
+      <if test="tCaseId != null">
+        t_case_id = #{tCaseId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.chancetop.qa.model.TCaseBrowser">
+    update t_case_browser
+    set t_project_id = #{tProjectId,jdbcType=BIGINT},
+      t_browser_id = #{tBrowserId,jdbcType=BIGINT},
+      t_case_id = #{tCaseId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
