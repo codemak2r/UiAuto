@@ -240,4 +240,46 @@
       update_date = #{updateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into t_case_param
+    (t_project_id, t_case_id, `key`, val, create_date, update_date)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.tProjectId,jdbcType=BIGINT}, #{item.tCaseId,jdbcType=BIGINT}, #{item.key,jdbcType=VARCHAR}, 
+        #{item.val,jdbcType=VARCHAR}, #{item.createDate,jdbcType=TIMESTAMP}, #{item.updateDate,jdbcType=TIMESTAMP}
+        )
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" keyColumn="id" keyProperty="list.id" parameterType="map" useGeneratedKeys="true">
+    insert into t_case_param (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'t_project_id'.toString() == column.value">
+          #{item.tProjectId,jdbcType=BIGINT}
+        </if>
+        <if test="'t_case_id'.toString() == column.value">
+          #{item.tCaseId,jdbcType=BIGINT}
+        </if>
+        <if test="'key'.toString() == column.value">
+          #{item.key,jdbcType=VARCHAR}
+        </if>
+        <if test="'val'.toString() == column.value">
+          #{item.val,jdbcType=VARCHAR}
+        </if>
+        <if test="'create_date'.toString() == column.value">
+          #{item.createDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'update_date'.toString() == column.value">
+          #{item.updateDate,jdbcType=TIMESTAMP}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
 </mapper>

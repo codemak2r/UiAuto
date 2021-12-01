@@ -1,5 +1,6 @@
 package com.chancetop.qa.examples;
 
+import com.chancetop.qa.model.TBrowser;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -158,8 +159,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -168,8 +179,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -178,8 +199,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -218,8 +249,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdNotEqualTo(Long value) {
             addCriterion("t_project_id <>", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -228,8 +269,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_project_id >=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -238,8 +289,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdLessThanOrEqualTo(Long value) {
             addCriterion("t_project_id <=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -278,8 +339,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andRemoteUrlEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("remote_url = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andRemoteUrlNotEqualTo(String value) {
             addCriterion("remote_url <>", value, "remoteUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemoteUrlNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("remote_url <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -288,8 +359,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andRemoteUrlGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("remote_url > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andRemoteUrlGreaterThanOrEqualTo(String value) {
             addCriterion("remote_url >=", value, "remoteUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemoteUrlGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("remote_url >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -298,8 +379,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andRemoteUrlLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("remote_url < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andRemoteUrlLessThanOrEqualTo(String value) {
             addCriterion("remote_url <=", value, "remoteUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemoteUrlLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("remote_url <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -348,8 +439,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBrowserNameEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_name = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andBrowserNameNotEqualTo(String value) {
             addCriterion("browser_name <>", value, "browserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrowserNameNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_name <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -358,8 +459,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBrowserNameGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_name > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andBrowserNameGreaterThanOrEqualTo(String value) {
             addCriterion("browser_name >=", value, "browserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrowserNameGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_name >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -368,8 +479,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBrowserNameLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_name < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andBrowserNameLessThanOrEqualTo(String value) {
             addCriterion("browser_name <=", value, "browserName");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrowserNameLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_name <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -418,8 +539,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBrowserVersionEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_version = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andBrowserVersionNotEqualTo(String value) {
             addCriterion("browser_version <>", value, "browserVersion");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrowserVersionNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_version <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -428,8 +559,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBrowserVersionGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_version > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andBrowserVersionGreaterThanOrEqualTo(String value) {
             addCriterion("browser_version >=", value, "browserVersion");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrowserVersionGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_version >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -438,8 +579,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBrowserVersionLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_version < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andBrowserVersionLessThanOrEqualTo(String value) {
             addCriterion("browser_version <=", value, "browserVersion");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrowserVersionLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("browser_version <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -488,8 +639,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andPlatformEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("platform = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andPlatformNotEqualTo(String value) {
             addCriterion("platform <>", value, "platform");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlatformNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("platform <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -498,8 +659,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andPlatformGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("platform > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andPlatformGreaterThanOrEqualTo(String value) {
             addCriterion("platform >=", value, "platform");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlatformGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("platform >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -508,8 +679,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andPlatformLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("platform < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andPlatformLessThanOrEqualTo(String value) {
             addCriterion("platform <=", value, "platform");
+            return (Criteria) this;
+        }
+
+        public Criteria andPlatformLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("platform <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -558,8 +739,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("create_date = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateNotEqualTo(Date value) {
             addCriterion("create_date <>", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("create_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -568,8 +759,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("create_date > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
             addCriterion("create_date >=", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("create_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -578,8 +779,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("create_date < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateLessThanOrEqualTo(Date value) {
             addCriterion("create_date <=", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("create_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -618,8 +829,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("update_date = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateNotEqualTo(Date value) {
             addCriterion("update_date <>", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateNotEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("update_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -628,8 +849,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateGreaterThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("update_date > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateGreaterThanOrEqualTo(Date value) {
             addCriterion("update_date >=", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateGreaterThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("update_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -638,8 +869,18 @@ public class TBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateLessThanColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("update_date < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateLessThanOrEqualTo(Date value) {
             addCriterion("update_date <=", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateLessThanOrEqualToColumn(TBrowser.Column column) {
+            addCriterion(new StringBuilder("update_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 

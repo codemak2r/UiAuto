@@ -10,6 +10,9 @@
         <property name="autoDelimitKeywords" value="true" />
         <property name="beginningDelimiter" value="`" />
         <property name="endingDelimiter" value="`" />
+        <!-- 批量插入插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.BatchInsertPlugin"/>
+        <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>
 
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
@@ -25,14 +28,6 @@
             <property name="targetPackage" value="${targetExample}"/>
         </plugin>
 
-        <!-- 批量插入插件 -->
-        <plugin type="com.itfsw.mybatis.generator.plugins.BatchInsertPlugin">
-            <!--
-            开启后可以实现官方插件根据属性是否为空决定是否插入该字段功能
-            ！需开启allowMultiQueries=true多条sql提交操作，所以不建议使用！插件默认不开启
-            -->
-            <property name="allowMultiQueries" value="false"/>
-        </plugin>
         <!-- Lombok插件 -->
         <plugin type="com.itfsw.mybatis.generator.plugins.LombokPlugin">
             <!-- @Data 默认开启,同时插件会对子类自动附加@EqualsAndHashCode(callSuper = true)，@ToString(callSuper = true) -->

@@ -7,16 +7,18 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class TParams implements Serializable {
+public class TCase implements Serializable {
     private Long id;
-
-    private Long tEnvId;
 
     private Long tProjectId;
 
-    private String key;
+    private Long tBrowserId;
 
-    private String val;
+    private String name;
+
+    private String owner;
+
+    private String desc;
 
     private Date createDate;
 
@@ -26,10 +28,11 @@ public class TParams implements Serializable {
 
     public enum Column {
         id("id", "id", "BIGINT", false),
-        tEnvId("t_env_id", "tEnvId", "BIGINT", false),
         tProjectId("t_project_id", "tProjectId", "BIGINT", false),
-        key("key", "key", "VARCHAR", true),
-        val("val", "val", "VARCHAR", false),
+        tBrowserId("t_browser_id", "tBrowserId", "BIGINT", false),
+        name("name", "name", "VARCHAR", true),
+        owner("owner", "owner", "VARCHAR", true),
+        desc("desc", "desc", "VARCHAR", true),
         createDate("create_date", "createDate", "TIMESTAMP", false),
         updateDate("update_date", "updateDate", "TIMESTAMP", false);
 

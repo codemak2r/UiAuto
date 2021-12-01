@@ -27,4 +27,8 @@ public interface TParamsMapper {
     int updateByPrimaryKeySelective(TParams record);
 
     int updateByPrimaryKey(TParams record);
+
+    int batchInsert(@Param("list") List<TParams> list);
+
+    int batchInsertSelective(@Param("list") List<TParams> list, @Param("selective") TParams.Column ... selective);
 }

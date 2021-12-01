@@ -27,4 +27,8 @@ public interface TCaseParamMapper {
     int updateByPrimaryKeySelective(TCaseParam record);
 
     int updateByPrimaryKey(TCaseParam record);
+
+    int batchInsert(@Param("list") List<TCaseParam> list);
+
+    int batchInsertSelective(@Param("list") List<TCaseParam> list, @Param("selective") TCaseParam.Column ... selective);
 }

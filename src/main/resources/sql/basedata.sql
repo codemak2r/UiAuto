@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `t_browser` (
     `remote_url` varchar(200) not null comment '远程driver 地址',
     `browser_name`  varchar(20) not null comment '浏览器名称',
     `browser_version` varchar(20) not null  comment '浏览器版本',
-    `platform` varchar(20) not null comment '平台',
+    `platform` varchar(20) comment '平台',
     `create_date` datetime comment '创建时间',
     `update_date` datetime comment '更新时间'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,5 +1,6 @@
 package com.chancetop.qa.examples;
 
+import com.chancetop.qa.model.TCaseBrowser;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -157,8 +158,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -167,8 +178,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdGreaterThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -177,8 +198,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdLessThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -217,8 +248,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdNotEqualTo(Long value) {
             addCriterion("t_project_id <>", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdNotEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -227,8 +268,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdGreaterThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_project_id >=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -237,8 +288,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdLessThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdLessThanOrEqualTo(Long value) {
             addCriterion("t_project_id <=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdLessThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_project_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -277,8 +338,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTBrowserIdEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_browser_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTBrowserIdNotEqualTo(Long value) {
             addCriterion("t_browser_id <>", value, "tBrowserId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTBrowserIdNotEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_browser_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -287,8 +358,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTBrowserIdGreaterThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_browser_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTBrowserIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_browser_id >=", value, "tBrowserId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTBrowserIdGreaterThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_browser_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -297,8 +378,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTBrowserIdLessThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_browser_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTBrowserIdLessThanOrEqualTo(Long value) {
             addCriterion("t_browser_id <=", value, "tBrowserId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTBrowserIdLessThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_browser_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -337,8 +428,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_case_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdNotEqualTo(Long value) {
             addCriterion("t_case_id <>", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdNotEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_case_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -347,8 +448,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdGreaterThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_case_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_case_id >=", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdGreaterThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_case_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -357,8 +468,18 @@ public class TCaseBrowserExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdLessThanColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_case_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdLessThanOrEqualTo(Long value) {
             addCriterion("t_case_id <=", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdLessThanOrEqualToColumn(TCaseBrowser.Column column) {
+            addCriterion(new StringBuilder("t_case_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 

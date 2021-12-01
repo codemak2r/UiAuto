@@ -41,21 +41,6 @@ spring:
       auto-commit: true # 自动提交
       max-lifetime: 1800000 # 连接池连接的最大生命周期
       connection-timeout: 30000 # 连接查实的时间 默认 30 秒
-  task:
-    execution:
-      pool:
-        # 最大线程数
-        max-size: 16
-        # 核心线程数
-        core-size: 16
-        # 存活时间
-        keep-alive: 10s
-        # 队列大小
-        queue-capacity: 100
-        # 是否允许核心线程超时
-        allow-core-thread-timeout: true
-      # 线程名称前缀
-      thread-name-prefix: async-task-
 
 mybatis:
   configuration:

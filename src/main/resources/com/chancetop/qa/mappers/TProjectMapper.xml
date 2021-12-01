@@ -223,4 +223,42 @@
       update_date = #{updateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into t_project
+    (`name`, `owner`, `desc`, create_date, update_date)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.name,jdbcType=VARCHAR}, #{item.owner,jdbcType=VARCHAR}, #{item.desc,jdbcType=VARCHAR}, 
+        #{item.createDate,jdbcType=TIMESTAMP}, #{item.updateDate,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" keyColumn="id" keyProperty="list.id" parameterType="map" useGeneratedKeys="true">
+    insert into t_project (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'name'.toString() == column.value">
+          #{item.name,jdbcType=VARCHAR}
+        </if>
+        <if test="'owner'.toString() == column.value">
+          #{item.owner,jdbcType=VARCHAR}
+        </if>
+        <if test="'desc'.toString() == column.value">
+          #{item.desc,jdbcType=VARCHAR}
+        </if>
+        <if test="'create_date'.toString() == column.value">
+          #{item.createDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'update_date'.toString() == column.value">
+          #{item.updateDate,jdbcType=TIMESTAMP}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
 </mapper>

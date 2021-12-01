@@ -193,4 +193,36 @@
       t_case_id = #{tCaseId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into t_case_browser
+    (t_project_id, t_browser_id, t_case_id)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.tProjectId,jdbcType=BIGINT}, #{item.tBrowserId,jdbcType=BIGINT}, #{item.tCaseId,jdbcType=BIGINT}
+        )
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" keyColumn="id" keyProperty="list.id" parameterType="map" useGeneratedKeys="true">
+    insert into t_case_browser (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'t_project_id'.toString() == column.value">
+          #{item.tProjectId,jdbcType=BIGINT}
+        </if>
+        <if test="'t_browser_id'.toString() == column.value">
+          #{item.tBrowserId,jdbcType=BIGINT}
+        </if>
+        <if test="'t_case_id'.toString() == column.value">
+          #{item.tCaseId,jdbcType=BIGINT}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
 </mapper>

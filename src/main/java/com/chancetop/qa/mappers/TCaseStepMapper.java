@@ -27,4 +27,8 @@ public interface TCaseStepMapper {
     int updateByPrimaryKeySelective(TCaseStep record);
 
     int updateByPrimaryKey(TCaseStep record);
+
+    int batchInsert(@Param("list") List<TCaseStep> list);
+
+    int batchInsertSelective(@Param("list") List<TCaseStep> list, @Param("selective") TCaseStep.Column ... selective);
 }

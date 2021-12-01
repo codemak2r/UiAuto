@@ -27,4 +27,8 @@ public interface TCaseBrowserMapper {
     int updateByPrimaryKeySelective(TCaseBrowser record);
 
     int updateByPrimaryKey(TCaseBrowser record);
+
+    int batchInsert(@Param("list") List<TCaseBrowser> list);
+
+    int batchInsertSelective(@Param("list") List<TCaseBrowser> list, @Param("selective") TCaseBrowser.Column ... selective);
 }

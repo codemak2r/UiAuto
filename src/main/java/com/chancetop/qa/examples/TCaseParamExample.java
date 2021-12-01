@@ -1,5 +1,6 @@
 package com.chancetop.qa.examples;
 
+import com.chancetop.qa.model.TCaseParam;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -158,8 +159,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -168,8 +179,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -178,8 +199,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -218,8 +249,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_project_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdNotEqualTo(Long value) {
             addCriterion("t_project_id <>", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_project_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -228,8 +269,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_project_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_project_id >=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_project_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -238,8 +289,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_project_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdLessThanOrEqualTo(Long value) {
             addCriterion("t_project_id <=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_project_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -278,8 +339,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_case_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdNotEqualTo(Long value) {
             addCriterion("t_case_id <>", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_case_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -288,8 +359,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_case_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_case_id >=", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_case_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -298,8 +379,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_case_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdLessThanOrEqualTo(Long value) {
             addCriterion("t_case_id <=", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("t_case_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -338,8 +429,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andKeyEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("`key` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andKeyNotEqualTo(String value) {
             addCriterion("`key` <>", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("`key` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -348,8 +449,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andKeyGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("`key` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andKeyGreaterThanOrEqualTo(String value) {
             addCriterion("`key` >=", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("`key` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -358,8 +469,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andKeyLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("`key` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andKeyLessThanOrEqualTo(String value) {
             addCriterion("`key` <=", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("`key` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -408,8 +529,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andValEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("val = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andValNotEqualTo(String value) {
             addCriterion("val <>", value, "val");
+            return (Criteria) this;
+        }
+
+        public Criteria andValNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("val <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -418,8 +549,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andValGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("val > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andValGreaterThanOrEqualTo(String value) {
             addCriterion("val >=", value, "val");
+            return (Criteria) this;
+        }
+
+        public Criteria andValGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("val >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -428,8 +569,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andValLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("val < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andValLessThanOrEqualTo(String value) {
             addCriterion("val <=", value, "val");
+            return (Criteria) this;
+        }
+
+        public Criteria andValLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("val <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -478,8 +629,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("create_date = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateNotEqualTo(Date value) {
             addCriterion("create_date <>", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("create_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -488,8 +649,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("create_date > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
             addCriterion("create_date >=", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("create_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -498,8 +669,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("create_date < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateLessThanOrEqualTo(Date value) {
             addCriterion("create_date <=", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("create_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -538,8 +719,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("update_date = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateNotEqualTo(Date value) {
             addCriterion("update_date <>", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateNotEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("update_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -548,8 +739,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateGreaterThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("update_date > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateGreaterThanOrEqualTo(Date value) {
             addCriterion("update_date >=", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateGreaterThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("update_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -558,8 +759,18 @@ public class TCaseParamExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateLessThanColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("update_date < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateLessThanOrEqualTo(Date value) {
             addCriterion("update_date <=", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateLessThanOrEqualToColumn(TCaseParam.Column column) {
+            addCriterion(new StringBuilder("update_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 

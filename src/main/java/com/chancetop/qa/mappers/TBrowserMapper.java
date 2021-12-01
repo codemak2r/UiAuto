@@ -27,4 +27,8 @@ public interface TBrowserMapper {
     int updateByPrimaryKeySelective(TBrowser record);
 
     int updateByPrimaryKey(TBrowser record);
+
+    int batchInsert(@Param("list") List<TBrowser> list);
+
+    int batchInsertSelective(@Param("list") List<TBrowser> list, @Param("selective") TBrowser.Column ... selective);
 }

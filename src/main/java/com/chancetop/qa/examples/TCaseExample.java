@@ -1,18 +1,18 @@
 package com.chancetop.qa.examples;
 
-import com.chancetop.qa.model.TParams;
+import com.chancetop.qa.model.TCase;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TParamsExample {
+public class TCaseExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TParamsExample() {
+    public TCaseExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -46,12 +46,12 @@ public class TParamsExample {
         return criteria;
     }
 
-    public TParamsExample orderBy(String orderByClause) {
+    public TCaseExample orderBy(String orderByClause) {
         this.setOrderByClause(orderByClause);
         return this;
     }
 
-    public TParamsExample orderBy(String ... orderByClauses) {
+    public TCaseExample orderBy(String ... orderByClauses) {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < orderByClauses.length; i++) {
             sb.append(orderByClauses[i]);
@@ -83,18 +83,18 @@ public class TParamsExample {
     }
 
     public static Criteria newAndCreateCriteria() {
-        TParamsExample example = new TParamsExample();
+        TCaseExample example = new TCaseExample();
         return example.createCriteria();
     }
 
-    public TParamsExample when(boolean condition, IExampleWhen then) {
+    public TCaseExample when(boolean condition, IExampleWhen then) {
         if (condition) {
             then.example(this);
         }
         return this;
     }
 
-    public TParamsExample when(boolean condition, IExampleWhen then, IExampleWhen otherwise) {
+    public TCaseExample when(boolean condition, IExampleWhen then, IExampleWhen otherwise) {
         if (condition) {
             then.example(this);
         } else {
@@ -159,7 +159,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualToColumn(TParams.Column column) {
+        public Criteria andIdEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("id = ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -169,7 +169,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualToColumn(TParams.Column column) {
+        public Criteria andIdNotEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -179,7 +179,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanColumn(TParams.Column column) {
+        public Criteria andIdGreaterThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("id > ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -189,7 +189,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andIdGreaterThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -199,7 +199,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanColumn(TParams.Column column) {
+        public Criteria andIdLessThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("id < ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -209,7 +209,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andIdLessThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -234,96 +234,6 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTEnvIdIsNull() {
-            addCriterion("t_env_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdIsNotNull() {
-            addCriterion("t_env_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdEqualTo(Long value) {
-            addCriterion("t_env_id =", value, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("t_env_id = ").append(column.getEscapedColumnName()).toString());
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdNotEqualTo(Long value) {
-            addCriterion("t_env_id <>", value, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdNotEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("t_env_id <> ").append(column.getEscapedColumnName()).toString());
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdGreaterThan(Long value) {
-            addCriterion("t_env_id >", value, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdGreaterThanColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("t_env_id > ").append(column.getEscapedColumnName()).toString());
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("t_env_id >=", value, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdGreaterThanOrEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("t_env_id >= ").append(column.getEscapedColumnName()).toString());
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdLessThan(Long value) {
-            addCriterion("t_env_id <", value, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdLessThanColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("t_env_id < ").append(column.getEscapedColumnName()).toString());
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdLessThanOrEqualTo(Long value) {
-            addCriterion("t_env_id <=", value, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdLessThanOrEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("t_env_id <= ").append(column.getEscapedColumnName()).toString());
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdIn(List<Long> values) {
-            addCriterion("t_env_id in", values, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdNotIn(List<Long> values) {
-            addCriterion("t_env_id not in", values, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdBetween(Long value1, Long value2) {
-            addCriterion("t_env_id between", value1, value2, "tEnvId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTEnvIdNotBetween(Long value1, Long value2) {
-            addCriterion("t_env_id not between", value1, value2, "tEnvId");
-            return (Criteria) this;
-        }
-
         public Criteria andTProjectIdIsNull() {
             addCriterion("t_project_id is null");
             return (Criteria) this;
@@ -339,7 +249,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTProjectIdEqualToColumn(TParams.Column column) {
+        public Criteria andTProjectIdEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("t_project_id = ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -349,7 +259,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTProjectIdNotEqualToColumn(TParams.Column column) {
+        public Criteria andTProjectIdNotEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("t_project_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -359,7 +269,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTProjectIdGreaterThanColumn(TParams.Column column) {
+        public Criteria andTProjectIdGreaterThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("t_project_id > ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -369,7 +279,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("t_project_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -379,7 +289,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTProjectIdLessThanColumn(TParams.Column column) {
+        public Criteria andTProjectIdLessThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("t_project_id < ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -389,7 +299,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andTProjectIdLessThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andTProjectIdLessThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("t_project_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -414,203 +324,393 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andKeyIsNull() {
-            addCriterion("`key` is null");
+        public Criteria andTBrowserIdIsNull() {
+            addCriterion("t_browser_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andKeyIsNotNull() {
-            addCriterion("`key` is not null");
+        public Criteria andTBrowserIdIsNotNull() {
+            addCriterion("t_browser_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andKeyEqualTo(String value) {
-            addCriterion("`key` =", value, "key");
+        public Criteria andTBrowserIdEqualTo(Long value) {
+            addCriterion("t_browser_id =", value, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("`key` = ").append(column.getEscapedColumnName()).toString());
+        public Criteria andTBrowserIdEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("t_browser_id = ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotEqualTo(String value) {
-            addCriterion("`key` <>", value, "key");
+        public Criteria andTBrowserIdNotEqualTo(Long value) {
+            addCriterion("t_browser_id <>", value, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("`key` <> ").append(column.getEscapedColumnName()).toString());
+        public Criteria andTBrowserIdNotEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("t_browser_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andKeyGreaterThan(String value) {
-            addCriterion("`key` >", value, "key");
+        public Criteria andTBrowserIdGreaterThan(Long value) {
+            addCriterion("t_browser_id >", value, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyGreaterThanColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("`key` > ").append(column.getEscapedColumnName()).toString());
+        public Criteria andTBrowserIdGreaterThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("t_browser_id > ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andKeyGreaterThanOrEqualTo(String value) {
-            addCriterion("`key` >=", value, "key");
+        public Criteria andTBrowserIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("t_browser_id >=", value, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyGreaterThanOrEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("`key` >= ").append(column.getEscapedColumnName()).toString());
+        public Criteria andTBrowserIdGreaterThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("t_browser_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andKeyLessThan(String value) {
-            addCriterion("`key` <", value, "key");
+        public Criteria andTBrowserIdLessThan(Long value) {
+            addCriterion("t_browser_id <", value, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyLessThanColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("`key` < ").append(column.getEscapedColumnName()).toString());
+        public Criteria andTBrowserIdLessThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("t_browser_id < ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andKeyLessThanOrEqualTo(String value) {
-            addCriterion("`key` <=", value, "key");
+        public Criteria andTBrowserIdLessThanOrEqualTo(Long value) {
+            addCriterion("t_browser_id <=", value, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyLessThanOrEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("`key` <= ").append(column.getEscapedColumnName()).toString());
+        public Criteria andTBrowserIdLessThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("t_browser_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andKeyLike(String value) {
-            addCriterion("`key` like", value, "key");
+        public Criteria andTBrowserIdIn(List<Long> values) {
+            addCriterion("t_browser_id in", values, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotLike(String value) {
-            addCriterion("`key` not like", value, "key");
+        public Criteria andTBrowserIdNotIn(List<Long> values) {
+            addCriterion("t_browser_id not in", values, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyIn(List<String> values) {
-            addCriterion("`key` in", values, "key");
+        public Criteria andTBrowserIdBetween(Long value1, Long value2) {
+            addCriterion("t_browser_id between", value1, value2, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotIn(List<String> values) {
-            addCriterion("`key` not in", values, "key");
+        public Criteria andTBrowserIdNotBetween(Long value1, Long value2) {
+            addCriterion("t_browser_id not between", value1, value2, "tBrowserId");
             return (Criteria) this;
         }
 
-        public Criteria andKeyBetween(String value1, String value2) {
-            addCriterion("`key` between", value1, value2, "key");
+        public Criteria andNameIsNull() {
+            addCriterion("`name` is null");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotBetween(String value1, String value2) {
-            addCriterion("`key` not between", value1, value2, "key");
+        public Criteria andNameIsNotNull() {
+            addCriterion("`name` is not null");
             return (Criteria) this;
         }
 
-        public Criteria andValIsNull() {
-            addCriterion("val is null");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("`name` =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValIsNotNull() {
-            addCriterion("val is not null");
+        public Criteria andNameEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`name` = ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andValEqualTo(String value) {
-            addCriterion("val =", value, "val");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("`name` <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("val = ").append(column.getEscapedColumnName()).toString());
+        public Criteria andNameNotEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`name` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andValNotEqualTo(String value) {
-            addCriterion("val <>", value, "val");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("`name` >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValNotEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("val <> ").append(column.getEscapedColumnName()).toString());
+        public Criteria andNameGreaterThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`name` > ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andValGreaterThan(String value) {
-            addCriterion("val >", value, "val");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("`name` >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValGreaterThanColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("val > ").append(column.getEscapedColumnName()).toString());
+        public Criteria andNameGreaterThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`name` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andValGreaterThanOrEqualTo(String value) {
-            addCriterion("val >=", value, "val");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("`name` <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValGreaterThanOrEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("val >= ").append(column.getEscapedColumnName()).toString());
+        public Criteria andNameLessThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`name` < ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andValLessThan(String value) {
-            addCriterion("val <", value, "val");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("`name` <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValLessThanColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("val < ").append(column.getEscapedColumnName()).toString());
+        public Criteria andNameLessThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`name` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
-        public Criteria andValLessThanOrEqualTo(String value) {
-            addCriterion("val <=", value, "val");
+        public Criteria andNameLike(String value) {
+            addCriterion("`name` like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValLessThanOrEqualToColumn(TParams.Column column) {
-            addCriterion(new StringBuilder("val <= ").append(column.getEscapedColumnName()).toString());
+        public Criteria andNameNotLike(String value) {
+            addCriterion("`name` not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValLike(String value) {
-            addCriterion("val like", value, "val");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("`name` in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValNotLike(String value) {
-            addCriterion("val not like", value, "val");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("`name` not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValIn(List<String> values) {
-            addCriterion("val in", values, "val");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("`name` between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValNotIn(List<String> values) {
-            addCriterion("val not in", values, "val");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("`name` not between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andValBetween(String value1, String value2) {
-            addCriterion("val between", value1, value2, "val");
+        public Criteria andOwnerIsNull() {
+            addCriterion("`owner` is null");
             return (Criteria) this;
         }
 
-        public Criteria andValNotBetween(String value1, String value2) {
-            addCriterion("val not between", value1, value2, "val");
+        public Criteria andOwnerIsNotNull() {
+            addCriterion("`owner` is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerEqualTo(String value) {
+            addCriterion("`owner` =", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`owner` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerNotEqualTo(String value) {
+            addCriterion("`owner` <>", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerNotEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`owner` <> ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerGreaterThan(String value) {
+            addCriterion("`owner` >", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerGreaterThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`owner` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerGreaterThanOrEqualTo(String value) {
+            addCriterion("`owner` >=", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerGreaterThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`owner` >= ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerLessThan(String value) {
+            addCriterion("`owner` <", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerLessThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`owner` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerLessThanOrEqualTo(String value) {
+            addCriterion("`owner` <=", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerLessThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`owner` <= ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerLike(String value) {
+            addCriterion("`owner` like", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerNotLike(String value) {
+            addCriterion("`owner` not like", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerIn(List<String> values) {
+            addCriterion("`owner` in", values, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerNotIn(List<String> values) {
+            addCriterion("`owner` not in", values, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerBetween(String value1, String value2) {
+            addCriterion("`owner` between", value1, value2, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerNotBetween(String value1, String value2) {
+            addCriterion("`owner` not between", value1, value2, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescIsNull() {
+            addCriterion("`desc` is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescIsNotNull() {
+            addCriterion("`desc` is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescEqualTo(String value) {
+            addCriterion("`desc` =", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`desc` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotEqualTo(String value) {
+            addCriterion("`desc` <>", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`desc` <> ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThan(String value) {
+            addCriterion("`desc` >", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`desc` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThanOrEqualTo(String value) {
+            addCriterion("`desc` >=", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`desc` >= ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThan(String value) {
+            addCriterion("`desc` <", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThanColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`desc` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThanOrEqualTo(String value) {
+            addCriterion("`desc` <=", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThanOrEqualToColumn(TCase.Column column) {
+            addCriterion(new StringBuilder("`desc` <= ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLike(String value) {
+            addCriterion("`desc` like", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotLike(String value) {
+            addCriterion("`desc` not like", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescIn(List<String> values) {
+            addCriterion("`desc` in", values, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotIn(List<String> values) {
+            addCriterion("`desc` not in", values, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescBetween(String value1, String value2) {
+            addCriterion("`desc` between", value1, value2, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotBetween(String value1, String value2) {
+            addCriterion("`desc` not between", value1, value2, "desc");
             return (Criteria) this;
         }
 
@@ -629,7 +729,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateEqualToColumn(TParams.Column column) {
+        public Criteria andCreateDateEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("create_date = ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -639,7 +739,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateNotEqualToColumn(TParams.Column column) {
+        public Criteria andCreateDateNotEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("create_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -649,7 +749,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateGreaterThanColumn(TParams.Column column) {
+        public Criteria andCreateDateGreaterThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("create_date > ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -659,7 +759,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateGreaterThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andCreateDateGreaterThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("create_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -669,7 +769,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateLessThanColumn(TParams.Column column) {
+        public Criteria andCreateDateLessThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("create_date < ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -679,7 +779,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateLessThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andCreateDateLessThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("create_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -719,7 +819,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateDateEqualToColumn(TParams.Column column) {
+        public Criteria andUpdateDateEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("update_date = ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -729,7 +829,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateDateNotEqualToColumn(TParams.Column column) {
+        public Criteria andUpdateDateNotEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("update_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -739,7 +839,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateDateGreaterThanColumn(TParams.Column column) {
+        public Criteria andUpdateDateGreaterThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("update_date > ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -749,7 +849,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateDateGreaterThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andUpdateDateGreaterThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("update_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -759,7 +859,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateDateLessThanColumn(TParams.Column column) {
+        public Criteria andUpdateDateLessThanColumn(TCase.Column column) {
             addCriterion(new StringBuilder("update_date < ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -769,7 +869,7 @@ public class TParamsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateDateLessThanOrEqualToColumn(TParams.Column column) {
+        public Criteria andUpdateDateLessThanOrEqualToColumn(TCase.Column column) {
             addCriterion(new StringBuilder("update_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
@@ -796,14 +896,14 @@ public class TParamsExample {
     }
 
     public static class Criteria extends GeneratedCriteria {
-        private TParamsExample example;
+        private TCaseExample example;
 
-        protected Criteria(TParamsExample example) {
+        protected Criteria(TCaseExample example) {
             super();
             this.example = example;
         }
 
-        public TParamsExample example() {
+        public TCaseExample example() {
             return this.example;
         }
 
@@ -928,6 +1028,6 @@ public class TParamsExample {
     }
 
     public interface IExampleWhen {
-        void example(com.chancetop.qa.examples.TParamsExample example);
+        void example(com.chancetop.qa.examples.TCaseExample example);
     }
 }

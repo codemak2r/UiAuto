@@ -1,5 +1,6 @@
 package com.chancetop.qa.examples;
 
+import com.chancetop.qa.model.TEnvironment;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -158,8 +159,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -168,8 +179,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -178,8 +199,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -218,8 +249,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("t_project_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdNotEqualTo(Long value) {
             addCriterion("t_project_id <>", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("t_project_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -228,8 +269,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("t_project_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_project_id >=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("t_project_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -238,8 +289,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("t_project_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdLessThanOrEqualTo(Long value) {
             addCriterion("t_project_id <=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("t_project_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -278,8 +339,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andNameEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`name` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andNameNotEqualTo(String value) {
             addCriterion("`name` <>", value, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andNameNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`name` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -288,8 +359,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andNameGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`name` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andNameGreaterThanOrEqualTo(String value) {
             addCriterion("`name` >=", value, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andNameGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`name` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -298,8 +379,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andNameLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`name` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andNameLessThanOrEqualTo(String value) {
             addCriterion("`name` <=", value, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andNameLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`name` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -348,8 +439,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andOwnerEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`owner` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andOwnerNotEqualTo(String value) {
             addCriterion("`owner` <>", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`owner` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -358,8 +459,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andOwnerGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`owner` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andOwnerGreaterThanOrEqualTo(String value) {
             addCriterion("`owner` >=", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`owner` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -368,8 +479,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andOwnerLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`owner` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andOwnerLessThanOrEqualTo(String value) {
             addCriterion("`owner` <=", value, "owner");
+            return (Criteria) this;
+        }
+
+        public Criteria andOwnerLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`owner` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -418,8 +539,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andDescEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`desc` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andDescNotEqualTo(String value) {
             addCriterion("`desc` <>", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`desc` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -428,8 +559,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andDescGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`desc` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andDescGreaterThanOrEqualTo(String value) {
             addCriterion("`desc` >=", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`desc` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -438,8 +579,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andDescLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`desc` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andDescLessThanOrEqualTo(String value) {
             addCriterion("`desc` <=", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("`desc` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -488,8 +639,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("create_date = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateNotEqualTo(Date value) {
             addCriterion("create_date <>", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("create_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -498,8 +659,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("create_date > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
             addCriterion("create_date >=", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("create_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -508,8 +679,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andCreateDateLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("create_date < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andCreateDateLessThanOrEqualTo(Date value) {
             addCriterion("create_date <=", value, "createDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateDateLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("create_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -548,8 +729,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("update_date = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateNotEqualTo(Date value) {
             addCriterion("update_date <>", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateNotEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("update_date <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -558,8 +749,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateGreaterThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("update_date > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateGreaterThanOrEqualTo(Date value) {
             addCriterion("update_date >=", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateGreaterThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("update_date >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -568,8 +769,18 @@ public class TEnvironmentExample {
             return (Criteria) this;
         }
 
+        public Criteria andUpdateDateLessThanColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("update_date < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andUpdateDateLessThanOrEqualTo(Date value) {
             addCriterion("update_date <=", value, "updateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateDateLessThanOrEqualToColumn(TEnvironment.Column column) {
+            addCriterion(new StringBuilder("update_date <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 

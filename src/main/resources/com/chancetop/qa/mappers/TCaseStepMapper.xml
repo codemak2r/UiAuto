@@ -240,4 +240,46 @@
       `value` = #{value,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into t_case_step
+    (t_project_id, t_case_id, `action`, selector, `element`, `value`)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.tProjectId,jdbcType=BIGINT}, #{item.tCaseId,jdbcType=BIGINT}, #{item.action,jdbcType=VARCHAR}, 
+        #{item.selector,jdbcType=VARCHAR}, #{item.element,jdbcType=VARCHAR}, #{item.value,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" keyColumn="id" keyProperty="list.id" parameterType="map" useGeneratedKeys="true">
+    insert into t_case_step (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'t_project_id'.toString() == column.value">
+          #{item.tProjectId,jdbcType=BIGINT}
+        </if>
+        <if test="'t_case_id'.toString() == column.value">
+          #{item.tCaseId,jdbcType=BIGINT}
+        </if>
+        <if test="'action'.toString() == column.value">
+          #{item.action,jdbcType=VARCHAR}
+        </if>
+        <if test="'selector'.toString() == column.value">
+          #{item.selector,jdbcType=VARCHAR}
+        </if>
+        <if test="'element'.toString() == column.value">
+          #{item.element,jdbcType=VARCHAR}
+        </if>
+        <if test="'value'.toString() == column.value">
+          #{item.value,jdbcType=VARCHAR}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
 </mapper>

@@ -1,5 +1,6 @@
 package com.chancetop.qa.examples;
 
+import com.chancetop.qa.model.TCaseStep;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -157,8 +158,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -167,8 +178,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -177,8 +198,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -217,8 +248,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_project_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdNotEqualTo(Long value) {
             addCriterion("t_project_id <>", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_project_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -227,8 +268,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_project_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_project_id >=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_project_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -237,8 +288,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andTProjectIdLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_project_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTProjectIdLessThanOrEqualTo(Long value) {
             addCriterion("t_project_id <=", value, "tProjectId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTProjectIdLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_project_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -277,8 +338,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_case_id = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdNotEqualTo(Long value) {
             addCriterion("t_case_id <>", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_case_id <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -287,8 +358,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_case_id > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdGreaterThanOrEqualTo(Long value) {
             addCriterion("t_case_id >=", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_case_id >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -297,8 +378,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andTCaseIdLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_case_id < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andTCaseIdLessThanOrEqualTo(Long value) {
             addCriterion("t_case_id <=", value, "tCaseId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTCaseIdLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("t_case_id <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -337,8 +428,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andActionEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`action` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andActionNotEqualTo(String value) {
             addCriterion("`action` <>", value, "action");
+            return (Criteria) this;
+        }
+
+        public Criteria andActionNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`action` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -347,8 +448,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andActionGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`action` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andActionGreaterThanOrEqualTo(String value) {
             addCriterion("`action` >=", value, "action");
+            return (Criteria) this;
+        }
+
+        public Criteria andActionGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`action` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -357,8 +468,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andActionLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`action` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andActionLessThanOrEqualTo(String value) {
             addCriterion("`action` <=", value, "action");
+            return (Criteria) this;
+        }
+
+        public Criteria andActionLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`action` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -407,8 +528,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andSelectorEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("selector = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andSelectorNotEqualTo(String value) {
             addCriterion("selector <>", value, "selector");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectorNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("selector <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -417,8 +548,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andSelectorGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("selector > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andSelectorGreaterThanOrEqualTo(String value) {
             addCriterion("selector >=", value, "selector");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectorGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("selector >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -427,8 +568,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andSelectorLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("selector < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andSelectorLessThanOrEqualTo(String value) {
             addCriterion("selector <=", value, "selector");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectorLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("selector <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -477,8 +628,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andElementEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`element` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andElementNotEqualTo(String value) {
             addCriterion("`element` <>", value, "element");
+            return (Criteria) this;
+        }
+
+        public Criteria andElementNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`element` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -487,8 +648,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andElementGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`element` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andElementGreaterThanOrEqualTo(String value) {
             addCriterion("`element` >=", value, "element");
+            return (Criteria) this;
+        }
+
+        public Criteria andElementGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`element` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -497,8 +668,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andElementLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`element` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andElementLessThanOrEqualTo(String value) {
             addCriterion("`element` <=", value, "element");
+            return (Criteria) this;
+        }
+
+        public Criteria andElementLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`element` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -547,8 +728,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andValueEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`value` = ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andValueNotEqualTo(String value) {
             addCriterion("`value` <>", value, "value");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueNotEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`value` <> ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -557,8 +748,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andValueGreaterThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`value` > ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andValueGreaterThanOrEqualTo(String value) {
             addCriterion("`value` >=", value, "value");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueGreaterThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`value` >= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 
@@ -567,8 +768,18 @@ public class TCaseStepExample {
             return (Criteria) this;
         }
 
+        public Criteria andValueLessThanColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`value` < ").append(column.getEscapedColumnName()).toString());
+            return (Criteria) this;
+        }
+
         public Criteria andValueLessThanOrEqualTo(String value) {
             addCriterion("`value` <=", value, "value");
+            return (Criteria) this;
+        }
+
+        public Criteria andValueLessThanOrEqualToColumn(TCaseStep.Column column) {
+            addCriterion(new StringBuilder("`value` <= ").append(column.getEscapedColumnName()).toString());
             return (Criteria) this;
         }
 

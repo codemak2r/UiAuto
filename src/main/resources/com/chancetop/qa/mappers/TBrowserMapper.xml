@@ -256,4 +256,50 @@
       update_date = #{updateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into t_browser
+    (t_project_id, remote_url, browser_name, browser_version, platform, create_date, 
+      update_date)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.tProjectId,jdbcType=BIGINT}, #{item.remoteUrl,jdbcType=VARCHAR}, #{item.browserName,jdbcType=VARCHAR}, 
+        #{item.browserVersion,jdbcType=VARCHAR}, #{item.platform,jdbcType=VARCHAR}, #{item.createDate,jdbcType=TIMESTAMP}, 
+        #{item.updateDate,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" keyColumn="id" keyProperty="list.id" parameterType="map" useGeneratedKeys="true">
+    insert into t_browser (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'t_project_id'.toString() == column.value">
+          #{item.tProjectId,jdbcType=BIGINT}
+        </if>
+        <if test="'remote_url'.toString() == column.value">
+          #{item.remoteUrl,jdbcType=VARCHAR}
+        </if>
+        <if test="'browser_name'.toString() == column.value">
+          #{item.browserName,jdbcType=VARCHAR}
+        </if>
+        <if test="'browser_version'.toString() == column.value">
+          #{item.browserVersion,jdbcType=VARCHAR}
+        </if>
+        <if test="'platform'.toString() == column.value">
+          #{item.platform,jdbcType=VARCHAR}
+        </if>
+        <if test="'create_date'.toString() == column.value">
+          #{item.createDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'update_date'.toString() == column.value">
+          #{item.updateDate,jdbcType=TIMESTAMP}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
 </mapper>

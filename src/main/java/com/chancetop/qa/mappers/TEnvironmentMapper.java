@@ -27,4 +27,8 @@ public interface TEnvironmentMapper {
     int updateByPrimaryKeySelective(TEnvironment record);
 
     int updateByPrimaryKey(TEnvironment record);
+
+    int batchInsert(@Param("list") List<TEnvironment> list);
+
+    int batchInsertSelective(@Param("list") List<TEnvironment> list, @Param("selective") TEnvironment.Column ... selective);
 }
