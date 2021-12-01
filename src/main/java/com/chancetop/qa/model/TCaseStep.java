@@ -21,6 +21,8 @@ public class TCaseStep implements Serializable {
 
     private String value;
 
+    private String desc;
+
     private static final long serialVersionUID = 1L;
 
     public enum Column {
@@ -30,7 +32,8 @@ public class TCaseStep implements Serializable {
         action("action", "action", "VARCHAR", true),
         selector("selector", "selector", "VARCHAR", false),
         element("element", "element", "VARCHAR", true),
-        value("value", "value", "VARCHAR", true);
+        value("value", "value", "VARCHAR", true),
+        desc("desc", "desc", "VARCHAR", true);
 
         private static final String BEGINNING_DELIMITER = "`";
 

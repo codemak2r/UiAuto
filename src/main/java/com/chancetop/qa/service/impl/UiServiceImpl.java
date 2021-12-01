@@ -94,6 +94,8 @@ public class UiServiceImpl implements UiService {
         String selector = caseStep.getSelector();
         String element = caseStep.getElement();
         String value = caseStep.getValue();
+        String desc = caseStep.getDesc();
+        logger.info(desc);
         switch (action) {
             case "open":
                 open(value);

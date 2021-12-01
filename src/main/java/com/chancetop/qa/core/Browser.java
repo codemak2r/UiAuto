@@ -2,6 +2,7 @@ package com.chancetop.qa.core;
 
 import com.chancetop.qa.model.TBrowser;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.impl.Waiter;
 import org.openqa.selenium.*;
@@ -165,5 +166,7 @@ public class Browser {
     public void sleep(String seconds){
         this.webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Long.getLong(seconds)));
     }
+
+
 
 }
